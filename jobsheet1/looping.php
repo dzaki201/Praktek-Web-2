@@ -17,22 +17,22 @@
         $y+=2;
 
     }
-    $z = 1;    
+       
     echo "</br> Perulangan Do While bilangan prima dari 1 hingga 10 </br>";
+    $z = 1; 
     do {
         $prima = true;
     
         for ($i = 2; $i < $z; $i++) {
             if ($z % $i == 0) {
                 $prima = false;
-                break;
             }
         }
     
-        if ($prima && $z < 20) {
+        if ($prima==true) {
             echo "$z </br> ";
         }
-    
+        
         $z++;
     } while ($z < 20);
     ?>
