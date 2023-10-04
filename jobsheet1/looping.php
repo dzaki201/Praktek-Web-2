@@ -19,7 +19,7 @@
     }
        
     echo "</br> Perulangan Do While bilangan prima dari 1 hingga 10 </br>";
-    $z = 1; 
+    $z = 2; 
     do {
         $prima = true;
     

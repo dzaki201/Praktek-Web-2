@@ -3,15 +3,15 @@
     <table>
         <tr>
             <td>NIM</td>
-            <td><input type="text" name="nim"></td>
+            <td><input type="text" name="NIM"></td>
         </tr>
         <tr>
             <td>Nama</td>
-            <td><input type="text" name="nama"></td>
+            <td><input type="text" name="Nama"></td>
         </tr>
         <tr>
             <td>Alamat</td>
-            <td><textarea name="alamat" cols="30" rows="5"></textarea></td>
+            <td><textarea name="Alamat" cols="30" rows="5"></textarea></td>
         </tr>
         <tr>
             <td></td>

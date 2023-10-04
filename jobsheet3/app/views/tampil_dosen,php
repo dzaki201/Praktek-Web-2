@@ -9,33 +9,33 @@
 </head>
 <body>
 <?php
-include '../classes/database.php';
+include '../classes/database2.php';
 $db=new database;
 ?>
 
-<h3>Data Mahasiswa</h3>
-<a href="input_mhs.php" class="btn btn-success">Tambah Mahasiswa</a>
+<h3>Data Dosen</h3>
+<a href="input_dosen.php" class="btn btn-success">Tambah Dosen</a>
 
 <table border="1" class="table table-bordered border-primary"  >
 <tr>
     <th>No</th>
-    <th>NIM</th>
+    <th>NIP</th>
     <th>Nama</th>
     <th>Alamat</th>
     <th>Aksi</th>
 </tr>
 <?php
 $no=1;
-foreach($db->tampil_mahasiswa()as $x){
+foreach($db->tampil_dosen()as $x){
 ?>
 <tr>
     <td><?php echo $no++?></td>
-    <td><?php echo $x['NIM']?></td>
-    <td><?php echo $x['Nama']?></td>
-    <td><?php echo $x['Alamat']?></td>
+    <td><?php echo $x['nip']?></td>
+    <td><?php echo $x['nama']?></td>
+    <td><?php echo $x['alamat']?></td>
     <td>
-        <a href="edit_mhs.php?id=<?php echo $x['id'];?>&aksi=edit" class="btn btn-warning">edit</a>
-        <a href="proses_mhs.php?id=<?php echo $x['id'];?>&aksi=hapus" class="btn btn-danger">hapus</a>
+        <a href="edit_dosen.php?id=<?php echo $x['id'];?>&aksi=edit" class="btn btn-warning">edit</a>
+        <a href="proses_dosen.php?id=<?php echo $x['id'];?>&aksi=hapus" class="btn btn-danger">hapus</a>
     </td>
 </tr>
 <?php
