@@ -6,9 +6,9 @@
 </head>
 <body>
     <?php
-    function persegi_panjang ($p, $l)
+    function persegi ($s)
     {
-        return $p*$l;
+        return $s*$s;
     }
     function lingkaran ($r)
     {
@@ -16,17 +16,17 @@
     }
     ?>
     <form method="POST">
-        Masukkan Panjang = <input type="text" name="p"></br>
-        Masukkan lebar = <input type="text" name="l"></br>
+        Masukkan Sisi = <input type="text" name="s"></br>
+        <!-- Masukkan lebar = <input type="text" name="l"></br> -->
         Masukkan jari-jari = <input type="text" name="r"></br>
         <input type="submit" value="Submit">
     <form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $p = $_POST["p"];
-        $l = $_POST["l"];
+        $s = $_POST["s"];
+        // $l = $_POST["l"];
         $r = $_POST["r"];
-        echo "</br> Luas Persegi Panjang = " . persegi_panjang ($p,$l) . "</br>";
+        echo "</br> Luas Persegi = " . persegi ($s) . "</br>";
         echo "Luas Lingkaran = " . lingkaran ($r) . "</br>";
     }
     ?>

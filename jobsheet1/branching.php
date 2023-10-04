@@ -19,8 +19,10 @@
             echo "$x adalah Bilangan Positif";
         }else if ($x<0){
             echo "$x adalah Bilangan Negatif";
-        }else {
+        }else if ($x=0){
             echo "$x adalah Bilangan Nol";
+        }else{
+            echo "tidak ada nilai";
         }
     }
     ?>
