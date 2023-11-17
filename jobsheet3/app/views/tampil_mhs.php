@@ -7,6 +7,33 @@
 
     <title>Document</title>
 </head>
+<div class="px-3 py-3">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SIAKAD</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Mahasiswa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dosen</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="px-4">
 <body>
 <?php
 include '../classes/database.php';
@@ -14,7 +41,7 @@ $db=new database;
 ?>
 
 <h3>Data Mahasiswa</h3>
-<a href="input_mhs.php" class="btn btn-success">Tambah Mahasiswa</a>
+<a href="input_mhs.php" class="btn btn-primary mb-2">Tambah Mahasiswa</a>
 
 <table border="1" class="table table-bordered border-primary"  >
 <tr>
@@ -44,3 +71,4 @@ foreach($db->tampil_mahasiswa()as $x){
 </table>
 </body>
 </html>
+</div>
