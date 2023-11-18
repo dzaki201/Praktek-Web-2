@@ -22,7 +22,7 @@
         <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" name="Alamat" cols="30" rows="5"></textarea>
     </div>
-    <button type="submit" value="Simpan" class="btn btn-primary">Submit</button>
+    <button type="submit" value="Simpan" class="btn btn-primary">Simpan</button>
 </form>
 </div>
 

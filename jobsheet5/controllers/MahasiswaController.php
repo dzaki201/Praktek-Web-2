@@ -1,5 +1,5 @@
 <?php
-include_once '../models/Mahasiswa.php';
+include_once '../../models/Mahasiswa.php';
 class MahasiswaController{
     private $model;
     public function __construct($db) {
@@ -8,5 +8,13 @@ class MahasiswaController{
     public function getAllMahasiswa(){
         return $this->model->getAllMahasiswa();
     }
-    
+    public function createMahasiswa($NIM,$Nama,$Tempat_Lahir,$Tanggal_Lahir,$Jenis_Kelamin,$Agama,$Alamat){
+        return $this->model->createMahasiswa($NIM,$Nama,$Tempat_Lahir,$Tanggal_Lahir,$Jenis_Kelamin,$Agama,$Alamat);  
+    }
+    public function getMahasiswaById($id){
+        return $this->model->getMahasiswaById($id);
+    }
+    public function updateMahasiswa($id,$Nama,$Tempat_Lahir,$Tanggal_Lahir,$Jenis_Kelamin,$Agama,$Alamat){
+        return $this->model->updateMahasiswa($id,$Nama,$Tempat_Lahir,$Tanggal_Lahir,$Jenis_Kelamin,$Agama,$Alamat);
+    }
 }
