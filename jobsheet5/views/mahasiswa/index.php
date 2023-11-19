@@ -80,7 +80,7 @@ foreach($mahasiswa as $x){
 
     <td>
         <a href="edit.php?id=<?php echo $x['id'];?>" class="btn btn-warning">edit</a>
-        <a href="proses_mhs.php?id=<?php echo $x['id'];?>&aksi=hapus" class="btn btn-danger">hapus</a>
+        <a href="hapus.php?id=<?php echo $x['id'];?>" class="btn btn-danger"onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
     </td>
 </tr>
 <?php
