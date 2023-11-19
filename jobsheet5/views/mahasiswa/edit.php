@@ -52,10 +52,6 @@ if ($mahasiswaData){
     <?php
     foreach($mahasiswaData as $d => $value){
     ?>
-    <!-- <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">NIM</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="NIM" >
-    </div> -->
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label"><?php
         echo $d;
@@ -63,6 +59,10 @@ if ($mahasiswaData){
         </label>
         <input type="text" class="form-control" id="exampleFormControlInput1" name="<?php echo $d ?>" value="<?php echo $value ?>" >
     </div>
+    <!-- <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">NIM</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="NIM" >
+    </div> -->
     <!-- <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Tempat Lahir</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" name="Tempat_Lahir" >
@@ -90,8 +90,8 @@ if ($mahasiswaData){
             <option value="Budha">Budha</option>
             <option value="Konghucu">Konghucu</option>
         </select>
-    </div> -->
-    <!-- <div class="mb-3">
+    </div>
+    <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" name="Alamat" cols="30" rows="5"></textarea>
     </div> -->

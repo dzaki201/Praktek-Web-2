@@ -27,7 +27,7 @@ class mahasiswa {
         return mysqli_fetch_assoc($result);
     }
 
-    public function updateMahasiswa($NIM, $Nama, $Tempat_Lahir, $Tanggal_Lahir, $Jenis_Kelamin, $Agama, $Alamat){
+    public function updateMahasiswa($id, $NIM, $Nama, $Tempat_Lahir, $Tanggal_Lahir, $Jenis_Kelamin, $Agama, $Alamat){
         $query = "UPDATE mahasiswa SET NIM='$NIM', Nama='$Nama', Tempat_Lahir='$Tempat_Lahir', Tanggal_Lahir='$Tanggal_Lahir', Jenis_Kelamin='$Jenis_Kelamin', Agama='$Agama', Alamat='$Alamat'";
         $result = mysqli_query($this->koneksi, $query);
         if($result){
