@@ -44,8 +44,12 @@ $db=new database;
 
 <h3>Data Mahasiswa</h3>
 <a href="input_mhs.php" class="btn btn-primary mb-2">Tambah Mahasiswa</a>
+<?php 
 
+?>
 <table border="1" class="table table-bordered border-primary"  >
+    
+    
 <tr>
     <th>No</th>
     <th>NIM</th>

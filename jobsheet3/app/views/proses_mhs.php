@@ -13,3 +13,4 @@ if($aksi=="tambah"){
     $db->hapus($_GET['id']);
     header("location:tampil_mhs.php");
 }
+

@@ -21,7 +21,7 @@
           <a class="nav-link" href="mahasiswa">Mahasiswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Dosen</a>
+          <a class="nav-link" href="dosen">Dosen</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
