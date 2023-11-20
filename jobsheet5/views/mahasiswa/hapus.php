@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
     $result=$mahasiswaController->deleteMahasiswa($id);
 
     if($result){
-        header("location:index.php");
+        header("location: mahasiswa");
     }else{
         header("Gagal Menghapus data");
     }

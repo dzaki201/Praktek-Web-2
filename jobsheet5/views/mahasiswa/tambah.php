@@ -7,35 +7,48 @@
           crossorigin="anonymous">
     <title>SIAKAD</title>
 </head>
-<div class="px-3 py-3">
-<h3>Tambah Data Mahasiswa</h3>
-<form action="proses_tambah.php?" method="post">
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">NIM</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="NIM" >
+
+ 
+<div class="px-5 py-4 ">
+<h3 class="text-center mb-5">Tambah Data Mahasiswa</h3>
+<form action="proses_tambah" method="post">
+<div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">NIM</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="NIM">
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="Nama" >
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Nama</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Nama">
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Tempat Lahir</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="Tempat_Lahir" >
+    <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Tempat Lahir</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="" name="Tempat_Lahir" >
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
-        <input type="date" class="form-control" id="exampleFormControlInput1" name="Tanggal_Lahir" >
+    <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Tanggal Lahir</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" id="" name="Tanggal_Lahir" >
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Jenis Kelamin</label>
+    <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Jenis Kelamin</label>
+        <div class="col-sm-10">
         <select name="Jenis_Kelamin" class="form-select" aria-label="Default select example">
             <option selected>Pilih Jenis Kelamin</option>
             <option value="L">Laki-Laki</option>
             <option value="P">Perempuan</option>
         </select>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Agama</label>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Agama</label>
+        <div class="col-sm-10">
         <select  name="Agama" class="form-select" aria-label="Default select example">
             <option selected>Pilih Agama</option>
             <option value="Islam">Islam</option>
@@ -45,12 +58,19 @@
             <option value="Budha">Budha</option>
             <option value="Konghucu">Konghucu</option>
         </select>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" name="Alamat" cols="30" rows="5"></textarea>
+    <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Alamat</label>
+        <div class="col-sm-10"> 
+            <textarea class="form-control"  name="Alamat" cols="30" rows="5"></textarea>
+        </div>
     </div>
-    <button type="submit" name="submit" value="Simpan" class="btn btn-primary">Simpan</button>
+    <div class="mb-3 row ">
+        <div class="col-sm-2"></div>
+    <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>
+    </div>
+    
 </form>
 </div>
 

@@ -8,39 +8,34 @@
     <title>SIAKAD</title>
 </head>
 <section class="container">
-
 <div class="px-3 py-3">
-    <div class="col-12">
-        <h3 class="text-center">Tambah Data Mahasiswa</h3>
-    </div>
-    
-    <form action="proses_mhs.php?aksi=tambah" method="post">
+<h3>Tambah Data Dosen</h3>
+<form action="proses_tambah.php?" method="post">
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">NIM</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="NIM">
+        <input type="text" class="form-control" id="" name="nidn" >
         </div>
     </div>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Nama</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="Nama">
+        <input type="text" class="form-control" id="" name="nama" >
         </div>
     </div>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Alamat</label>
         <div class="col-sm-10">
-            <textarea class="form-control" name="Alamat" rows="5"></textarea>
+        <textarea class="form-control" id="" name="alamat" cols="30" rows="5"></textarea>
         </div>
     </div>
-    <div class="mb-3 row">
-        <div class="col-sm-10 offset-sm-2">
-            <button type="submit" value="Simpan" class="btn btn-primary">Simpan</button>
-        </div>
+    <div class="mb-3 row ">
+        <div class="col-sm-2"></div>
+    <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>
     </div>
+   
 </form>
 </div>
-
 </section>
 
 
