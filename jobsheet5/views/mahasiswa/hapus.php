@@ -9,7 +9,7 @@ $db=$database->getKoneksi();
 if(isset($_GET['id'])){
     $id=$_GET['id'];
 
-    $mahasiswaController=new MahasiswaController($db);
+    $mahasiswaController=new mahasiswaController($db);
     $result=$mahasiswaController->deleteMahasiswa($id);
 
     if($result){
