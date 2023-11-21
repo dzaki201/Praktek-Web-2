@@ -9,11 +9,11 @@ $db=$database->getKoneksi();
 if(isset($_GET['id'])){
     $id=$_GET['id'];
 
-    $mahasiswaController=new mahasiswaController($db);
+    $mahasiswaController=new MahasiswaController($db);
     $result=$mahasiswaController->deleteMahasiswa($id);
 
     if($result){
-        header("location: mahasiswa");
+        header("location:index.php");
     }else{
         header("Gagal Menghapus data");
     }

@@ -23,12 +23,12 @@ class mahasiswa {
     }
     public function getMahasiswaById($id) { 
         $query = "SELECT * FROM mahasiswa WHERE id='$id'";
-        $result = mysqli_query($this->koneksi, $query);        
+        $result = mysqli_query($this->koneksi, $query);
         return mysqli_fetch_assoc($result);
     }
 
-    public function updateMahasiswa($id, $NIM, $Nama, $Tanggal_Lahir, $Jenis_Kelamin, $Agama, $Alamat){
-        $query = "UPDATE mahasiswa SET NIM='$NIM', Nama='$Nama',  Tanggal_Lahir='$Tanggal_Lahir', Jenis_Kelamin='$Jenis_Kelamin', Agama='$Agama', Alamat='$Alamat' where id='$id'";
+    public function updateMahasiswa($id,$NIM,$Nama,$Tempat_Lahir,$Tanggal_Lahir,$Jenis_Kelamin,$Agama,$Alamat){
+        $query = "UPDATE mahasiswa SET NIM='$NIM', Nama='$Nama', Tempat_Lahir='$Tempat_Lahir', Tanggal_Lahir='$Tanggal_Lahir', Jenis_Kelamin='$Jenis_Kelamin', Agama='$Agama', Alamat='$Alamat' WHERE id='$id'";
         $result = mysqli_query($this->koneksi, $query);
         if($result){
             return true;
@@ -38,7 +38,7 @@ class mahasiswa {
     }
     
     public function deleteMahasiswa($id) {
-        $query = "DELETE FROM mahasiswa WHERE id='id'";
+        $query = "DELETE FROM mahasiswa WHERE id='$id'";
         $result = mysqli_query($this->koneksi, $query);
         if($result){
             return true;

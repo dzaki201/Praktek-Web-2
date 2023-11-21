@@ -11,7 +11,7 @@
  
 <div class="px-5 py-4 ">
 <h3 class="text-center mb-5">Tambah Data Mahasiswa</h3>
-<form action="proses_tambah" method="post">
+<form action="proses_tambah.php" method="post">
 <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">NIM</label>
         <div class="col-sm-10">
@@ -41,8 +41,8 @@
         <div class="col-sm-10">
         <select name="Jenis_Kelamin" class="form-select" aria-label="Default select example">
             <option selected>Pilih Jenis Kelamin</option>
-            <option value="L">Laki-Laki</option>
-            <option value="P">Perempuan</option>
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
         </select>
         </div>
     </div>

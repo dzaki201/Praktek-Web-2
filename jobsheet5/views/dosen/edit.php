@@ -18,7 +18,7 @@ if(isset($_GET['id'])){
             $nama=$_POST['nama'];
             $alamat=$_POST['alamat'];
 
-            $result=$dosenController->updateDosen($nidn,$nama,$alamat);
+            $result=$dosenController->updateDosen($id,$nidn,$nama,$alamat);
             if($result){
                 header("location:index.php");
             }else{
@@ -55,42 +55,6 @@ if ($dosenData){
         </label>
         <input type="text" class="form-control" id="exampleFormControlInput1" name="<?php echo $d ?>" value="<?php echo $value ?>" >
     </div>
-    <!-- <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">NIM</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="NIM" >
-    </div> -->
-    <!-- <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Tempat Lahir</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="Tempat_Lahir" >
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
-        <input type="date" class="form-control" id="exampleFormControlInput1" name="Tanggal_Lahir" >
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Jenis Kelamin</label>
-        <select name="Jenis_Kelamin" class="form-select" aria-label="Default select example">
-            <option selected>Pilih Jenis Kelamin</option>
-            <option value="L">Laki-Laki</option>
-            <option value="P">Perempuan</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Agama</label>
-        <select  name="Agama" class="form-select" aria-label="Default select example">
-            <option selected>Pilih Agama</option>
-            <option value="Islam">Islam</option>
-            <option value="Kristen">Kristen</option>
-            <option value="Katolik">Katolik</option>
-            <option value="Hindu">Hindu</option>
-            <option value="Budha">Budha</option>
-            <option value="Konghucu">Konghucu</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" name="Alamat" cols="30" rows="5"></textarea>
-    </div> -->
     <?php
     }
     ?>

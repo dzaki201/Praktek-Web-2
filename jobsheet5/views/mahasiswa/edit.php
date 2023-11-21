@@ -6,13 +6,13 @@ include_once '../../controllers/MahasiswaController.php';
 $database=new database;
 $db=$database->getKoneksi();
 
-
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $mahasiswaController=new mahasiswaController($db);
-    $mahasiswaData = $mahasiswaController->getMahasiswaById($id);
-   
-    if ($mahasiswaData) {
+
+    $mahasiswaController=new MahasiswaController($db);
+    $mahasiswaData=$mahasiswaController->getMahasiswaById($id);
+
+    if($mahasiswaData){
         if(isset($_POST['submit'])){
             $NIM=$_POST['NIM'];
             $Nama=$_POST['Nama'];
@@ -22,19 +22,17 @@ if(isset($_GET['id'])){
             $Agama=$_POST['Agama'];
             $Alamat=$_POST['Alamat'];
 
-            $result = $mahasiswaController->updateMahasiswa($id, $NIM, $Nama, $Tanggal_Lahir, $Jenis_Kelamin, $Agama, $Alamat);
-            
-            if ($result) {
-                header("Location: mahasiswa");  
-            } else {
-                header("Location: edit_mahasiswa");
+            $result=$mahasiswaController->updateMahasiswa($id,$NIM,$Nama,$Tempat_Lahir,$Tanggal_Lahir,$Jenis_Kelamin,$Agama,$Alamat);
+            if($result){
+                header("location:index.php");
+            }else{
+                header("location:edit.php");
             }
         }
-    } else {
-        echo "Mahasiswa tidak ditemukan";
+    }else{
+        echo"Dosen tidak ditemukan";
     }
- }
-
+}
 ?>
 <html lang="en">
 <head>
@@ -45,18 +43,17 @@ if(isset($_GET['id'])){
           crossorigin="anonymous">
     <title>SIAKAD</title>
 </head>
-
-
-<div class="px-5 py-4 ">
-<h3 class="text-center mb-5">Edit Data Mahasiswa</h3>
-<?php
-if ($mahasiswaData){
-?>
-<form action="" method="post">
+<section class="container">
+<div class="px-3 py-3">
+    <h3 class="text-center mb-3">Edit Data Mahasiswa</h3>
+    <?php
+    if ($mahasiswaData){
+    ?>
+    <form action="" method="post">
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">ID</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="id" value="<?php echo $mahasiswaData['id'] ?>">
+            <input type="text" class="form-control" name="id" value="<?php echo $mahasiswaData['id'] ?>" disabled>
         </div>
     </div>
     <div class="mb-3 row">
@@ -92,38 +89,42 @@ if ($mahasiswaData){
             foreach ($jenisKelaminOptions as $option) {
                 $selected = ($mahasiswaData['Jenis_Kelamin'] == $option) ? 'selected' : '';
                 echo "<option value='$option' $selected>$option</option>";
-            }
-            ?>
-        </select>
-    </div>
-    </div>
-    <div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">Agama</label>
-    <div class="col-sm-10">
-        <select name="Agama" class="form-select" aria-label="Default select example">
-            <?php
-            $agamaOptions = ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha', 'Konghucu'];
-            foreach ($agamaOptions as $option) {
-                $selected = ($mahasiswaData['Agama'] == $option) ? 'selected' : '';
-                echo "<option $selected>$option</option>";
-            }
-            ?>
-        </select>
-    </div>
+            }?>
+            </select>
         </div>
-    <div class="mb-3 row">
-        <label  class="col-sm-2 col-form-label">Alamat</label>
-        <div class="col-sm-10"> 
-            <textarea class="form-control"  name="Alamat" cols="30" rows="5"><?php echo $mahasiswaData['Alamat']?></textarea>
         </div>
-    </div>
-    <div class="mb-3 row ">
-        <div class="col-sm-2"></div>
-    <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>
-    </div>
-    
-</form>
+        <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Agama</label>
+        <div class="col-sm-10">
+            <select name="Agama" class="form-select" aria-label="Default select example">
+                <?php
+                $agamaOptions = ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha', 'Konghucu'];
+                foreach ($agamaOptions as $option) {
+                    $selected = ($mahasiswaData['Agama'] == $option) ? 'selected' : '';
+                    echo "<option $selected>$option</option>";
+                }
+                ?>
+            </select>
+        </div>
+            </div>
+        <div class="mb-3 row">
+            <label  class="col-sm-2 col-form-label">Alamat</label>
+            <div class="col-sm-10"> 
+                <textarea class="form-control"  name="Alamat" cols="30" rows="5"><?php echo $mahasiswaData['Alamat']?></textarea>
+            </div>
+        </div>
+        <div class="mb-3 row ">
+            <div class="col-sm-2"></div>
+        <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>
+        </div>
+        <?php
+        
+        }
+        ?>
+    </form>
 </div>
-<?php
-    }
-    ?>
+</section>
+
+
+
+

@@ -14,8 +14,8 @@ class DosenController{
     public function getDosenById($id){
         return $this->model->getDosenById($id);
     }
-    public function updateDosen($nidn,$nama,$alamat){
-        return $this->model->updateDosen($nidn,$nama,$alamat);
+    public function updateDosen($id,$nidn,$nama,$alamat){
+        return $this->model->updateDosen($id,$nidn,$nama,$alamat);
     }
     public function deleteDosen($id){
         return $this->model->deleteDosen($id);
