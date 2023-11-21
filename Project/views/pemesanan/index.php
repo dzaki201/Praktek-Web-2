@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <?php
 //memanggil class model database
 include_once '../../config.php';
@@ -14,8 +15,8 @@ $pemesanan = $pemesananController->getAllPemesanan();
 ?>
 
 <body>
-
-
+<main class="content">
+				<div class="container-fluid p-0">
 <h3>Data Bus</h3>
 <a href="tambah.php" class="btn btn-primary mb-2">Tambah Pesanan</a>
 
@@ -45,6 +46,8 @@ foreach($pemesanan as $x){
 }
 ?>
 </table>
+</div>
+</main>
 </body>
 </html>
 </div>

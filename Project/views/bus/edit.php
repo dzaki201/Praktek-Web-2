@@ -2,7 +2,7 @@
 
 include_once '../../config.php';
 include_once '../../controllers/BusController.php';
-
+require'../../index.html';
 $database=new database;
 $db=$database->getKoneksi();
 
@@ -93,9 +93,6 @@ if(isset($_GET['id'])){
                     </select>
                 </div>
             </div>
-
-
-
                 <div class="mb-3 row">
                     <div class="col-sm-2"></div>
                     <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>

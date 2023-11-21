@@ -23,12 +23,7 @@ $bus = $busController->getAllBus();
 <div class="px-5 py-4 ">
 <h3 class="text-center mb-5">Tambah Data Pesanan</h3>
 <form action="proses_tambah.php" method="post">
-<!-- <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">ID Bus</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="id">
-        </div>
-    </div> -->
+
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Nama Pemesan</label>
         <div class="col-sm-10">
@@ -42,7 +37,7 @@ $bus = $busController->getAllBus();
         </div>
     </div>
     <div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">Pilih Bus</label>
+    <label class="col-sm-2 col-form-label">Pesan Bus</label>
     <div class="col-sm-10">
         <select name="pesanan" class="form-select" aria-label="Default select example">
             <option selected>Pilih Bus</option>
@@ -54,9 +49,6 @@ $bus = $busController->getAllBus();
         </select>
     </div>
     </div>
-
-
-</div>
     <div class="mb-3 row ">
         <div class="col-sm-2"></div>
     <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>
