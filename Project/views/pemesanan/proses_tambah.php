@@ -14,8 +14,8 @@ if(isset($_POST['submit'])){
     $pemesananController=new PemesananController($db);
     $result=$pemesananController->createPemesanan($nama, $tanggal, $id_bus);
     if ($result){
-        header("location:index.php");
+        header("location:pemesanan");
     }else{
-        header("location:tambah.php");
+        header("location:tambahpemesanan");
     }
 }

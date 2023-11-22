@@ -13,7 +13,7 @@ if(isset($_GET['id_bus'])){
     $result=$busController->deleteBus($id_bus);
 
     if($result){
-        header("location:index.php");
+        header("location:bus");
     }else{
         header("Gagal Menghapus data");
     }

@@ -10,9 +10,9 @@
 <section class="container">
 <div class="px-3 py-3">
 <h3>Tambah Data Dosen</h3>
-<form action="prosestambah" method="post">
+<form action="prosesdosen" method="post">
     <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">NIM</label>
+        <label class="col-sm-2 col-form-label">NIDN</label>
         <div class="col-sm-10">
         <input type="text" class="form-control" id="" name="nidn" >
         </div>

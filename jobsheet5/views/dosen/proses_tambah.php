@@ -14,8 +14,8 @@ if(isset($_POST['submit'])){
     $dosenController=new DosenController($db);
     $result=$dosenController->createDosen($nidn,$nama,$alamat);
     if ($result){
-        header("location:index.php");
+        header("location:dosen");
     }else{
-        header("location:tambah.php");
+        header("location:tambahdosen");
     }
 }

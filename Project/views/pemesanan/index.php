@@ -18,7 +18,7 @@ $pemesanan = $pemesananController->getAllPemesanan();
 <main class="content">
 				<div class="container-fluid p-0">
 <h3>Data Bus</h3>
-<a href="tambah.php" class="btn btn-primary mb-2">Tambah Pesanan</a>
+<a href="tambahpemesanan" class="btn btn-primary mb-2">Tambah Pesanan</a>
 
 <table border="1" class="table table-bordered border-primary"  >
 <tr>
@@ -39,8 +39,8 @@ foreach($pemesanan as $x){
     <td><?php echo $x['tanggal']?></td>
     <td><?php echo $x['id_bus']?></td>
     <td>
-        <a href="edit.php?id=<?php echo $x['id'];?>" class="btn btn-warning">edit</a>
-        <a href="hapus.php?id=<?php echo $x['id'];?>" class="btn btn-danger"onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
+        <a href="editpemesanan?id=<?php echo $x['id'];?>" class="btn btn-warning">edit</a>
+        <a href="hapuspemesanan?id=<?php echo $x['id'];?>" class="btn btn-danger" onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
     </td>
 </tr>
 <?php

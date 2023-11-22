@@ -22,7 +22,7 @@ $bus = $busController->getAllBus();
  
 <div class="px-5 py-4 ">
 <h3 class="text-center mb-5">Tambah Data Pesanan</h3>
-<form action="proses_tambah.php" method="post">
+<form action="prosespemesanan" method="post">
 
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Nama Pemesan</label>

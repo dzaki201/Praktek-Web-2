@@ -17,7 +17,7 @@ $mahasiswa = $mahasiswaController->getAllBus();
 
 
 <h3>Data Bus</h3>
-<a href="tambah.php" class="btn btn-primary mb-2">Tambah Bus</a>
+<a href="tambahbus" class="btn btn-primary mb-2">Tambah Bus</a>
 
 <table border="1" class="table table-bordered border-primary"  >
 <tr>
@@ -50,8 +50,8 @@ foreach($mahasiswa as $x){
 
 
     <td>
-        <a href="edit.php?id=<?php echo $x['id_bus'];?>" class="btn btn-warning">edit</a>
-        <a href="hapus.php?id=<?php echo $x['id_bus'];?>" class="btn btn-danger"onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
+        <a href="editbus?id_bus=<?php echo $x['id_bus'];?>" class="btn btn-warning">edit</a>
+        <a href="hapusbus?id_bus=<?php echo $x['id_bus'];?>" class="btn btn-danger"onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
     </td>
 </tr>
 <?php

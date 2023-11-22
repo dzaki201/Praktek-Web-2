@@ -13,10 +13,10 @@ if(isset($_POST['submit'])){
     $status=$_POST['status'];
     
     $busController=new BusController($db);
-    $result=$busController->createBus($nopol, $tipe, $kapasitas, $status);
+    $result=$busController-> createBus( $nopol, $tipe, $kapasitas, $status);
     if ($result){
-        header("location:index.php");
+        header("location:bus");
     }else{
-        header("location:tambah.php");
+        header("location:tambahbus");
     }
 }

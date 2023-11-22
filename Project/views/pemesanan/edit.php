@@ -24,13 +24,13 @@ if(isset($_GET['id'])){
 
             $result=$pemesananController->updatePemesanan($id, $nama, $tanggal, $id_bus );
             if($result){
-                header("location:index.php");
+                header("location:pemesanan");
             }else{
-                header("location:edit.php");
+                header("location:editpemesanan");
             }
         }
     }else{
-        echo"Dosen tidak ditemukan";
+        echo"Pemesanan tidak ditemukan";
     }
 }
 ?>
@@ -68,12 +68,16 @@ if(isset($_GET['id'])){
             <option selected>Pilih Bus</option>
             <?php foreach ($bus as $data) : ?>
                 <?php if ($data['status'] == 1) : ?>
-                    <option value="<?php echo $data['id_bus']; ?>"><?php echo $data['id_bus'] . ' - ' . $data['tipe']; ?></option>
+                    <?php
+                    $selected = ($data['id_bus'] == $id_pesanan) ? 'selected' : '';
+                    ?>
+                    <option value="<?php echo $data['id_bus']; ?>" <?php echo $selected; ?>><?php echo $data['id_bus'] . ' - ' . $data['tipe']; ?></option>
                 <?php endif; ?>
             <?php endforeach; ?>
         </select>
     </div>
 </div>
+
     <div class="mb-3 row">
         <div class="col-sm-2"></div>
         <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>

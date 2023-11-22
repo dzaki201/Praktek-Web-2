@@ -9,11 +9,11 @@ $db=$database->getKoneksi();
 
 
 if(isset($_GET['id_bus'])){
-    $id=$_GET['id_bus'];
+    $id_bus=$_GET['id_bus'];
 
-    $busController=new BusController($db);
-    $busData=$busController->getBusById($id_bus);
-
+    $busController = new BusController($db);
+    $busData = $busController->getBusById($id_bus);
+    
     if($busData){
         if(isset($_POST['submit'])){
             $nopol=$_POST['nopol'];
@@ -23,13 +23,13 @@ if(isset($_GET['id_bus'])){
 
             $result=$busController->updateBus($id_bus, $nopol, $tipe, $kapasitas, $status);
             if($result){
-                header("location:index.php");
+                header("location:bus");
             }else{
-                header("location:edit.php");
+                header("location:editbus");
             }
         }
     }else{
-        echo"Dosen tidak ditemukan";
+        echo"Bus tidak ditemukan";
     }
 }
 ?>

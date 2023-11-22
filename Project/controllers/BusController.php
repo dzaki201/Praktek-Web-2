@@ -8,8 +8,8 @@ class BusController {
     public function getAllBus(){
         return $this->model->getAllBus();
     }
-    public function createBus($id_bus, $nopol, $tipe, $kapasitas){
-        return $this->model->createBus($id_bus, $nopol, $tipe, $kapasitas);  
+    public function  createBus( $nopol, $tipe, $kapasitas, $status){
+        return $this->model-> createBus( $nopol, $tipe, $kapasitas, $status);  
     }public function getBusById($id_bus){
         return $this->model->getBusById($id_bus);
     }
