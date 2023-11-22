@@ -26,7 +26,8 @@ $pemesanan = $pemesananController->getAllPemesanan();
     <th>ID Pemesanan</th>
     <th>Nama Pemesan</th>
     <th>Tanggal</th>
-    <th>Pesanan Bus</th>
+    <th>Pesanan Bus (id)</th>
+
 <?php
 $no=1;
 foreach($pemesanan as $x){
@@ -36,7 +37,7 @@ foreach($pemesanan as $x){
     <td><?php echo $x['id']?></td>
     <td><?php echo $x['nama']?></td>
     <td><?php echo $x['tanggal']?></td>
-    <td><?php echo $x['pesanan']?></td>
+    <td><?php echo $x['id_bus']?></td>
     <td>
         <a href="edit.php?id=<?php echo $x['id'];?>" class="btn btn-warning">edit</a>
         <a href="hapus.php?id=<?php echo $x['id'];?>" class="btn btn-danger"onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>

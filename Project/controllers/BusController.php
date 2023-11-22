@@ -8,16 +8,16 @@ class BusController {
     public function getAllBus(){
         return $this->model->getAllBus();
     }
-    public function createBus($id, $nopol, $tipe, $kapasitas){
-        return $this->model->createBus($id, $nopol, $tipe, $kapasitas);  
-    }public function getBusById($id){
-        return $this->model->getBusById($id);
+    public function createBus($id_bus, $nopol, $tipe, $kapasitas){
+        return $this->model->createBus($id_bus, $nopol, $tipe, $kapasitas);  
+    }public function getBusById($id_bus){
+        return $this->model->getBusById($id_bus);
     }
-    public function updateBus($id, $nopol, $tipe, $kapasitas, $status){
-        return $this->model->updateBus($id, $nopol, $tipe, $kapasitas, $status);
+    public function updateBus($id_bus, $nopol, $tipe, $kapasitas, $status){
+        return $this->model->updateBus($id_bus, $nopol, $tipe, $kapasitas, $status);
     }    
-    public function deleteBus($id){
-        return $this->model->deleteBus($id);
+    public function deleteBus($id_bus){
+        return $this->model->deleteBus($id_bus);
     }
     
 }

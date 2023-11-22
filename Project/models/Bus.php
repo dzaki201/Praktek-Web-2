@@ -21,14 +21,15 @@ class bus {
         } else {
             return false;
         }
-    }public function getBusById($id) { 
-        $query = "SELECT * FROM bus_wisata WHERE id='$id'";
+    }
+    public function getBusById($id_bus) { 
+        $query = "SELECT * FROM bus_wisata WHERE id_bus ='$id_bus'";
         $result = mysqli_query($this->koneksi, $query);
         return mysqli_fetch_assoc($result);
     }
 
-    public function updateBus($id, $nopol, $tipe, $kapasitas, $status){
-        $query = "UPDATE bus_wisata SET nopol='$nopol', tipe='$tipe', kapasitas='$kapasitas', status='$status' WHERE id='$id'";
+    public function updateBus($id_bus, $nopol, $tipe, $kapasitas, $status){
+        $query = "UPDATE bus_wisata SET nopol='$nopol', tipe='$tipe', kapasitas='$kapasitas', status='$status' WHERE id_bus='$id_bus'";
         $result = mysqli_query($this->koneksi, $query);
         if($result){
             return true;
@@ -36,8 +37,8 @@ class bus {
             return false;
         }
     }
-    public function deleteBus($id) {
-        $query = "DELETE FROM bus_wisata WHERE id='$id'";
+    public function deleteBus($id_bus) {
+        $query = "DELETE FROM bus_wisata WHERE id_bus='$id_bus'";
         $result = mysqli_query($this->koneksi, $query);
         if($result){
             return true;

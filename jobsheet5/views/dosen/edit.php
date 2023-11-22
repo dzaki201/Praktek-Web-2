@@ -20,9 +20,9 @@ if(isset($_GET['id'])){
 
             $result=$dosenController->updateDosen($id,$nidn,$nama,$alamat);
             if($result){
-                header("location:index.php");
+                header("location:dosen");
             }else{
-                header("location:edit.php");
+                header("location:editdosen");
             }
         }
     }else{
@@ -39,6 +39,7 @@ if(isset($_GET['id'])){
           crossorigin="anonymous">
     <title>SIAKAD</title>
 </head>
+<section class="container">
 <div class="px-3 py-3">
 <h3>Edit Data Dosen</h3>
 <?php
@@ -48,22 +49,30 @@ if ($dosenData){
     <?php
     foreach($dosenData as $d => $value){
     ?>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"><?php
+    <div class="mb-3 row">
+        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label"><?php
         echo $d;
         ?>
         </label>
+        <div class="col-sm-10">
         <input type="text" class="form-control" id="exampleFormControlInput1" name="<?php echo $d ?>" value="<?php echo $value ?>" >
+        </div>
     </div>
     <?php
     }
     ?>
-    <button type="submit" name="submit" value="Simpan" class="btn btn-primary">Simpan</button>
+    <div class="mb-3 row ">
+            <div class="col-sm-2"></div>
+        <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>
+        </div>
+    </div>
     <?php
     }
     ?>
 </form>
 </div>
+</section>
+
 
 
 

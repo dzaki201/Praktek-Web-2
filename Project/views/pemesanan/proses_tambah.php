@@ -9,10 +9,10 @@ $db=$database->getKoneksi();
 if(isset($_POST['submit'])){
     $nama=$_POST['nama'];
     $tanggal=$_POST['tanggal'];
-    $pesanan=$_POST['pesanan'];
+    $id_bus=$_POST['id_bus'];
 
     $pemesananController=new PemesananController($db);
-    $result=$pemesananController->createPemesanan($nama, $tanggal, $pesanan);
+    $result=$pemesananController->createPemesanan($nama, $tanggal, $id_bus);
     if ($result){
         header("location:index.php");
     }else{

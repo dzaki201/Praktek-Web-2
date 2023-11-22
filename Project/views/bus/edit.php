@@ -2,15 +2,17 @@
 
 include_once '../../config.php';
 include_once '../../controllers/BusController.php';
-require'../../index.html';
+
 $database=new database;
 $db=$database->getKoneksi();
 
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
+
+
+if(isset($_GET['id_bus'])){
+    $id=$_GET['id_bus'];
 
     $busController=new BusController($db);
-    $busData=$busController->getBusById($id);
+    $busData=$busController->getBusById($id_bus);
 
     if($busData){
         if(isset($_POST['submit'])){
@@ -19,7 +21,7 @@ if(isset($_GET['id'])){
             $kapasitas=$_POST['kapasitas'];
             $status=$_POST['status'];
 
-            $result=$busController->updateBus($id, $nopol, $tipe, $kapasitas, $status);
+            $result=$busController->updateBus($id_bus, $nopol, $tipe, $kapasitas, $status);
             if($result){
                 header("location:index.php");
             }else{
@@ -44,12 +46,12 @@ if(isset($_GET['id'])){
 <section class="container">
     <div class="px-3 py-3">
         <h3 class="text-center mb-3">Edit Data Bus</h3>
-        <?php if ($busData) : ?>
+        <?php if ($busData) { ?>
             <form action="" method="post">
                 <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label">ID</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="id" value="<?php echo $busData['id'] ?>" disabled>
+                        <input type="text" class="form-control" name="id_bus" value="<?php echo $busData['id_bus'] ?>" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -98,7 +100,7 @@ if(isset($_GET['id'])){
                     <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>
                 </div>
             </form>
-        <?php endif; ?>
+        <?php }?>
     </div>
 </section>
 

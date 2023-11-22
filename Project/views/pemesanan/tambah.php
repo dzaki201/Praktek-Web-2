@@ -39,16 +39,17 @@ $bus = $busController->getAllBus();
     <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">Pesan Bus</label>
     <div class="col-sm-10">
-        <select name="pesanan" class="form-select" aria-label="Default select example">
+        <select name="id_bus" class="form-select" aria-label="Default select example">
             <option selected>Pilih Bus</option>
             <?php foreach ($bus as $data) : ?>
                 <?php if ($data['status'] == 1) : ?>
-                    <option value="<?php echo 'NO '. $data['id'] . '-' . $data['tipe']; ?>"><?php echo $data['id'] . ' - ' . $data['tipe']; ?></option>
+                    <option value="<?php echo $data['id_bus']; ?>"><?php echo $data['id_bus'] . ' - ' . $data['tipe']; ?></option>
                 <?php endif; ?>
             <?php endforeach; ?>
         </select>
     </div>
-    </div>
+</div>
+
     <div class="mb-3 row ">
         <div class="col-sm-2"></div>
     <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>

@@ -24,9 +24,9 @@ if(isset($_GET['id'])){
 
             $result=$mahasiswaController->updateMahasiswa($id,$NIM,$Nama,$Tempat_Lahir,$Tanggal_Lahir,$Jenis_Kelamin,$Agama,$Alamat);
             if($result){
-                header("location:index.php");
+                header("location:mahasiswa");
             }else{
-                header("location:edit.php");
+                header("location:editmahasiswa");
             }
         }
     }else{

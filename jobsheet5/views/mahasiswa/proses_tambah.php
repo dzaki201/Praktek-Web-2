@@ -18,8 +18,8 @@ if(isset($_POST['submit'])){
     $mahasiswaController=new MahasiswaController($db);
     $result=$mahasiswaController->createMahasiswa($NIM,$Nama,$Tempat_Lahir,$Tanggal_Lahir,$Jenis_Kelamin,$Agama,$Alamat);
     if ($result){
-        header("location:index.php");
+        header("location:mahasiswa");
     }else{
-        header("location:tambah.php");
+        header("location:tambahmahasiswa");
     }
 }

@@ -10,7 +10,7 @@
 <section class="container">
 <div class="px-3 py-3">
 <h3>Tambah Data Dosen</h3>
-<form action="proses_tambah.php?" method="post">
+<form action="prosestambah" method="post">
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">NIM</label>
         <div class="col-sm-10">

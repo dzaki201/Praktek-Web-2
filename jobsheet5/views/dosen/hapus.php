@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
     $result=$dosenController->deleteDosen($id);
 
     if($result){
-        header("location:index.php");
+        header("location:dosen");
     }else{
         header("Gagal Menghapus data");
     }

@@ -34,7 +34,7 @@ foreach($mahasiswa as $x){
 ?>
 <tr>
     <td><?php echo $no++?></td>
-    <td><?php echo $x['id']?></td>
+    <td><?php echo $x['id_bus']?></td>
     <td><?php echo $x['nopol']?></td>
     <td><?php echo $x['tipe']?></td>
     <td><?php echo $x['kapasitas']?></td>
@@ -50,8 +50,8 @@ foreach($mahasiswa as $x){
 
 
     <td>
-        <a href="edit.php?id=<?php echo $x['id'];?>" class="btn btn-warning">edit</a>
-        <a href="hapus.php?id=<?php echo $x['id'];?>" class="btn btn-danger"onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
+        <a href="edit.php?id=<?php echo $x['id_bus'];?>" class="btn btn-warning">edit</a>
+        <a href="hapus.php?id=<?php echo $x['id_bus'];?>" class="btn btn-danger"onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
     </td>
 </tr>
 <?php
