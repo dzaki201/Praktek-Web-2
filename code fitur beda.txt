@@ -1,0 +1,56 @@
+<?php
+class Bus
+{
+    public $routeAvailable;
+    public $dateAvailable;
+    public $busType;
+
+    public function __construct($routeAvailable, $dateAvailable, $busType)
+    {
+        $this->routeAvailable = $routeAvailable;
+        $this->dateAvailable = $dateAvailable;
+        $this->busType = $busType;
+    }
+
+    public function checkAvailability($searchRoute, $searchDate, $searchBusType)
+    {
+        $routeMatch = false;
+        $dateMatch = false;
+        $busTypeMatch = false;
+
+        if ($this->routeAvailable == $searchRoute) {
+            $routeMatch = true;
+        }
+
+        if ($this->dateAvailable == $searchDate) {
+            $dateMatch = true;
+        }
+
+        if ($this->busType == $searchBusType) {
+            $busTypeMatch = true;
+        }
+
+        if ($routeMatch && $dateMatch && $busTypeMatch) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+$bus1 = new Bus("Jakarta-Bandung", "2022-05-10", "Executive");
+$bus2 = new Bus("Jakarta-Surabaya", "2022-05-12", "Economy");
+$bus3 = new Bus("Bandung-Surabaya", "2022-05-14", "Economy");
+
+$busList = array($bus1, $bus2, $bus3);
+
+$searchRoute = "Jakarta-Bandung";
+$searchDate = "2022-05-10";
+$searchBusType = "Executive";
+
+foreach ($busList as $bus) {
+    if ($bus->checkAvailability($searchRoute, $searchDate, $searchBusType)) {
+        echo "Bus found with route: " . $bus->routeAvailable . ", date: " . $bus->dateAvailable . ", and bus type: " . $bus->busType . "\n";
+    }
+}
+?>

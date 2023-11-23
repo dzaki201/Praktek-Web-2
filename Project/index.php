@@ -18,10 +18,16 @@
           <a class="nav-link active" aria-current="page" href="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pemesanan">Pemesanan</a>
+          <a class="nav-link" href="">Rute</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="bus">Bus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Pencarian</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pemesanan">Pemesanan</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
