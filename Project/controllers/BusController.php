@@ -10,7 +10,8 @@ class BusController {
     }
     public function  createBus( $nopol, $tipe, $kapasitas, $status){
         return $this->model-> createBus( $nopol, $tipe, $kapasitas, $status);  
-    }public function getBusById($id_bus){
+    }
+    public function getBusById($id_bus){
         return $this->model->getBusById($id_bus);
     }
     public function updateBus($id_bus, $nopol, $tipe, $kapasitas, $status){

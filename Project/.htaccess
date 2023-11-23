@@ -3,11 +3,19 @@ RewriteBase /project/
 
 RewriteRule ^home/?$ index.php
 
+RewriteRule ^rute/?$ views/rute/index.php
+RewriteRule ^tambahrute/?$ views/rute/tambah.php
+RewriteRule ^editrute/?$ views/rute/edit.php
+RewriteRule ^hapusrute/?$ views/rute/hapus.php
+RewriteRule ^prosesrute/?$ views/rute/proses_tambah.php
+
 RewriteRule ^bus/?$ views/bus/index.php
 RewriteRule ^tambahbus/?$ views/bus/tambah.php
 RewriteRule ^editbus/?$ views/bus/edit.php
 RewriteRule ^hapusbus/?$ views/bus/hapus.php
 RewriteRule ^prosesbus/?$ views/bus/proses_tambah.php
+
+RewriteRule ^pencarian/?$ views/pencarian/index.php
 
 RewriteRule ^pemesanan/?$ views/pemesanan/index.php
 RewriteRule ^tambahpemesanan/?$ views/pemesanan/tambah.php

@@ -9,8 +9,8 @@ require'../../index.php';
 $database=new database;
 $db=$database->getKoneksi();
 
-$mahasiswaController = new BusController($db);
-$mahasiswa = $mahasiswaController->getAllBus();    
+$busController = new BusController($db);
+$bus = $busController->getAllBus();    
 ?>
 
 <body>
@@ -30,7 +30,7 @@ $mahasiswa = $mahasiswaController->getAllBus();
 </tr>
 <?php
 $no=1;
-foreach($mahasiswa as $x){
+foreach($bus as $x){
 ?>
 <tr>
     <td><?php echo $no++?></td>
