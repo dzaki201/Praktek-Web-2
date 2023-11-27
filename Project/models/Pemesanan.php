@@ -1,49 +1,66 @@
 <?php
 
-class pemesanan {
+class pemesanan
+{
     private $koneksi;
-    public function __construct($db) {
+    public function __construct($db)
+    {
         $this->koneksi = $db;
     }
 
-    public function getAllPemesanan() {
-        
+    public function getAllPemesanan()
+    {
+
         $query = "SELECT * FROM pemesanan INNER JOIN bus_wisata ON pemesanan.id_bus= bus_wisata.id_bus ";
-        $result = mysqli_query($this->koneksi, $query); 
+        $result = mysqli_query($this->koneksi, $query);
         return $result;
     }
-    public function createPemesanan($nama, $tanggal, $id_bus ) {
-        $query = "INSERT INTO pemesanan (nama, tanggal, id_bus) 
+    public function createPemesanan($nama, $tanggal, $id_bus)
+    {
+        // Check if the selected bus is already reserved for the given date
+        $checkQuery = "SELECT * FROM pemesanan WHERE id_bus = '$id_bus' AND tanggal = '$tanggal'";
+        $checkResult = mysqli_query($this->koneksi, $checkQuery);
+
+        if (mysqli_num_rows($checkResult) > 0) {
+            // Bus is already reserved for the selected date
+            return false;
+        } else {
+            // Bus is available, proceed with the reservation
+            $query = "INSERT INTO pemesanan (nama, tanggal, id_bus) 
                   VALUES ('$nama', '$tanggal', '$id_bus')";
+            $result = mysqli_query($this->koneksi, $query);
+
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+    public function getPemesananById($id)
+    {
+        $query = "SELECT * FROM pemesanan  INNER JOIN bus_wisata ON pemesanan.id_bus= bus_wisata.id_bus WHERE id='$id'";
         $result = mysqli_query($this->koneksi, $query);
-    
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function updatePemesanan($id, $nama, $tanggal, $id_bus)
+    {
+        $query = "UPDATE pemesanan SET nama='$nama', tanggal='$tanggal', id_bus='$id_bus' WHERE id='$id'";
+        $result = mysqli_query($this->koneksi, $query);
         if ($result) {
             return true;
         } else {
             return false;
         }
     }
-    public function getPemesananById($id) { 
-        $query = "SELECT * FROM pemesanan  INNER JOIN bus_wisata ON pemesanan.id_bus= bus_wisata.id_bus WHERE id='$id'";
-        $result = mysqli_query($this->koneksi, $query);
-        return mysqli_fetch_assoc($result);
-    }
-
-    public function updatePemesanan($id, $nama, $tanggal, $id_bus ){
-        $query = "UPDATE pemesanan SET nama='$nama', tanggal='$tanggal', id_bus='$id_bus' WHERE id='$id'";
-        $result = mysqli_query($this->koneksi, $query);
-        if($result){
-            return true;
-        } else {
-            return false;
-        }
-    }
-    public function deletePemesanan($id) {
+    public function deletePemesanan($id)
+    {
         $query = "DELETE FROM pemesanan WHERE id='$id'";
         $result = mysqli_query($this->koneksi, $query);
-        if($result){
+        if ($result) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

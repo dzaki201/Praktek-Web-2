@@ -8,14 +8,14 @@ class RuteController {
     public function getAllRute(){
         return $this->model->getAllRute();
     }
-    public function  createRute( $nama_rute, $jarak){
-        return $this->model-> createRute( $nama_rute, $jarak);  
+    public function  createRute( $nama_rute, $jarak, $harga){
+        return $this->model-> createRute( $nama_rute, $jarak, $harga);  
     }
     public function getRuteById($id_rute){
         return $this->model->getRuteById($id_rute);
     }
-    public function updateRute($id_rute, $nama_rute, $jarak){
-        return $this->model->updateRute($id_rute, $nama_rute, $jarak);
+    public function updateRute($id_rute, $nama_rute, $jarak, $harga){
+        return $this->model->updateRute($id_rute, $nama_rute, $jarak, $harga);
     }
     public function deleteRute($id_rute){
         return $this->model->deleteRute($id_rute);

@@ -3,44 +3,44 @@
 include_once '../../config.php';
 include_once '../../controllers/BusController.php';
 
-$database=new database;
-$db=$database->getKoneksi();
+$database = new database;
+$db = $database->getKoneksi();
 
 
 
-if(isset($_GET['id_bus'])){
-    $id_bus=$_GET['id_bus'];
+if (isset($_GET['id_bus'])) {
+    $id_bus = $_GET['id_bus'];
 
     $busController = new BusController($db);
     $busData = $busController->getBusById($id_bus);
-    
-    if($busData){
-        if(isset($_POST['submit'])){
-            $nopol=$_POST['nopol'];
-            $tipe=$_POST['tipe'];
-            $kapasitas=$_POST['kapasitas'];
-            $status=$_POST['status'];
 
-            $result=$busController->updateBus($id_bus, $nopol, $tipe, $kapasitas, $status);
-            if($result){
+    if ($busData) {
+        if (isset($_POST['submit'])) {
+            $nopol = $_POST['nopol'];
+            $tipe = $_POST['tipe'];
+            $kapasitas = $_POST['kapasitas'];
+            $status = $_POST['status'];
+
+            $result = $busController->updateBus($id_bus, $nopol, $tipe, $kapasitas, $status);
+            if ($result) {
                 header("location:bus");
-            }else{
+            } else {
                 header("location:editbus");
             }
         }
-    }else{
-        echo"Bus tidak ditemukan";
+    } else {
+        echo "Bus tidak ditemukan";
     }
 }
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>SIAKAD</title>
 </head>
 <section class="container">
@@ -51,7 +51,8 @@ if(isset($_GET['id_bus'])){
                 <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label">ID</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="id_bus" value="<?php echo $busData['id_bus'] ?>" disabled>
+                        <input type="text" class="form-control" name="id_bus" value="<?php echo $busData['id_bus'] ?>"
+                            disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -65,7 +66,7 @@ if(isset($_GET['id_bus'])){
                     <div class="col-sm-10">
                         <select name="tipe" class="form-select" aria-label="Default select example">
                             <?php
-                            $BusOptions = ['Bus Mikro', 'Bus Medium', 'Bus Besar', 'Bus Double Decker' ];
+                            $BusOptions = ['Bus Mikro', 'Bus Medium', 'Bus Besar', 'Bus Double Decker'];
                             foreach ($BusOptions as $option) {
                                 $selected = ($busData['tipe'] == $option) ? 'selected' : '';
                                 echo "<option value='$option' $selected>$option</option>";
@@ -77,33 +78,30 @@ if(isset($_GET['id_bus'])){
                 <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label">Kapasitas</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="kapasitas" value="<?php echo $busData['kapasitas'] ?>">
+                        <input type="text" class="form-control" name="kapasitas"
+                            value="<?php echo $busData['kapasitas'] ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Status Operasi</label>
-                <div class="col-sm-10">
-                    <select class="form-select" aria-label="Default select example" name="status">
-                        <?php
-                        $StatusOptions = ['Tersedia', 'Tidak Tersedia'];
-                        foreach ($StatusOptions as $option) {
-                            $selected = ($busData['status'] == (($option == 'Tersedia') ? '1' : '0')) ? 'selected' : '';
-                            $value = ($option == 'Tersedia') ? '1' : '0';
-                            echo "<option value='$value' $selected>$option</option>";
-                        }
-                        ?>
-                    </select>
+                    <label class="col-sm-2 col-form-label">Status Operasi</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" name="status">
+                            <?php
+                            $StatusOptions = ['Tersedia', 'Tidak Tersedia'];
+                            foreach ($StatusOptions as $option) {
+                                $selected = ($busData['status'] == (($option == 'Tersedia') ? '1' : '0')) ? 'selected' : '';
+                                $value = ($option == 'Tersedia') ? '1' : '0';
+                                echo "<option value='$value' $selected>$option</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
                 </div>
-            </div>
                 <div class="mb-3 row">
                     <div class="col-sm-2"></div>
                     <button type="submit" name="submit" value="Simpan" class="btn btn-primary col-sm-10">Simpan</button>
                 </div>
             </form>
-        <?php }?>
+        <?php } ?>
     </div>
 </section>
-
-
-
-

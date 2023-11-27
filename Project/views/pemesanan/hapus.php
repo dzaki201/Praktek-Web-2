@@ -3,18 +3,18 @@
 include_once '../../config.php';
 include_once '../../controllers/PemesananController.php';
 
-$database=new database;
-$db=$database->getKoneksi();
+$database = new database;
+$db = $database->getKoneksi();
 
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-    $pemesananController=new PemesananController($db);
-    $result=$pemesananController->deletePemesanan($id);
+    $pemesananController = new PemesananController($db);
+    $result = $pemesananController->deletePemesanan($id);
 
-    if($result){
+    if ($result) {
         header("location:pemesanan");
-    }else{
+    } else {
         header("Gagal Menghapus data");
     }
 }
