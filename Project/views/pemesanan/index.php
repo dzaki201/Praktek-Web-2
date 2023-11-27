@@ -15,7 +15,8 @@ $pemesanan = $pemesananController->getAllPemesanan();
 ?>
 
 <body>
-<main class="content">
+    <section class="container">
+    <main class="content">
 				<div class="container-fluid p-0">
 <h3>Data Bus</h3>
 <a href="tambahpemesanan" class="btn btn-primary mb-2">Tambah Pesanan</a>
@@ -49,6 +50,8 @@ foreach($pemesanan as $x){
 </table>
 </div>
 </main>
+
+    </section>
 </body>
 </html>
 </div>

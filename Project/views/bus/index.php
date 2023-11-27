@@ -14,8 +14,7 @@ $bus = $busController->getAllBus();
 ?>
 
 <body>
-
-
+<section class="container">
 <h3>Data Bus</h3>
 <a href="tambahbus" class="btn btn-primary mb-2">Tambah Bus</a>
 
@@ -58,6 +57,9 @@ foreach($bus as $x){
 }
 ?>
 </table>
+</section>
+
+
 </body>
 </html>
 </div>

@@ -15,7 +15,7 @@ $rute = $ruteController->getAllRute();
 
 <body>
 
-
+<section class="container">
 <h3>Data Bus</h3>
 <a href="tambahrute" class="btn btn-primary mb-2">Tambah Rute</a>
 
@@ -49,5 +49,6 @@ foreach($rute as $x){
 ?>
 </table>
 </body>
+</section>
 </html>
 </div>

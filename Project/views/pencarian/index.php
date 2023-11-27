@@ -42,7 +42,7 @@ $rute = $ruteController->getAllRute();
                 <option value="Bus Double Decker" <?php echo isset($_POST['tipe']) && $_POST['tipe'] == 'Bus Double Decker' ? 'selected' : ''; ?>>Bus Double Decker</option>
             </select>
         </div>
-    </div>
+    </div class="col-sm-2">
     <button type="submit" class="btn btn-primary mb-3 mx-auto d-block">Cari</button>
     </form>
 
