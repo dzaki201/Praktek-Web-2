@@ -28,6 +28,7 @@ $pemesanan = $pemesananController->getAllPemesanan();
                         <th>Nama Pemesan</th>
                         <th>Tanggal</th>
                         <th>Pesanan Bus (id)</th>
+                        <!-- <th>Harga</th> -->
 
                         <?php
                         $no = 1;

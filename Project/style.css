@@ -84,7 +84,7 @@ margin: 0;
 padding: 0
 }
 .clear{clear:both}
-body {}
+
 .mg-tb-40{
 	margin:40px 0px;
 }
@@ -184,7 +184,7 @@ body {}
 /*  2.  Header Top CSS
 /*----------------------------------------*/
 .header-top-area, .footer-copyright-area{
-	background:#00c292;
+	background:#D80032;
 }
 .logo-area{
 	padding:14px 0px;
@@ -193,13 +193,13 @@ body {}
 	float: right;
 }
 .nav.notika-top-nav .open>a, .nav.notika-top-nav .open>a:focus, .nav.notika-top-nav .open>a:hover {
-    background: #00c292;
-    border-color: 0px solid #00c292;
+    background: #D80032;
+    border-color: 0px solid #D80032;
 	
 }
 .nav.notika-top-nav>li>a:focus, .nav.notika-top-nav>li>a:hover {
     text-decoration: none;
-    background-color: #00c292;
+    background-color: #D80032;
 }
 .navbar-nav>li>a{
 	color:#fff;
@@ -304,7 +304,7 @@ body {}
     margin-top: 15px;
 }
 .header-top-menu .nav.notika-top-nav li .message-dd .hd-mg-va a:hover{
-    color: #00c292;
+    color: #D80032;
 }
 .hd-task-info {
     overflow: hidden;
@@ -356,7 +356,7 @@ body {}
     top: 0px;
     right: 0px;
     font-size: 12px;
-	color:#00c292;
+	color:#D80032;
 }
 .ntd-ctn {
 	position: absolute;
@@ -910,7 +910,7 @@ ul.notika-menu-wrap li a{
 }
 .conversation-list .conversation-text {
     display: inline-block;
-    float: left;
+  
     font-size: 12px;
     margin-left: 12px;
     width: 70%;
@@ -962,7 +962,7 @@ ul.notika-menu-wrap li a{
 }
 .conversation-list .chat-avatar {
     display: inline-block;
-    float: left;
+   
     text-align: center;
     width: 40px;
 }
@@ -3140,9 +3140,7 @@ textarea.auto-size {
 	color:#fff;
 	padding: 5px 10px;
 }
-.chosen-select-act .chosen-container-multi .chosen-choices li.search-choice span{
-	
-}
+
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close{
 	width: 15px;
     height: 10px;
