@@ -52,9 +52,9 @@ $rute = $ruteController->getAllRute();
 
 
                     <td>
-                        <a href="editrute?id_rute=<?php echo $x['id_rute']; ?>" class="btn btn-warning">edit</a>
+                        <a href="editrute?id_rute=<?php echo $x['id_rute']; ?>" class="btn btn-warning"><i class="notika-icon notika-edit"></i></a>
                         <a href="hapusrute?id_rute=<?php echo $x['id_rute']; ?>" class="btn btn-danger"
-                            onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
+                            onclick="return confirm('Apakah Yakin akan menghapus?')"><i class="notika-icon notika-trash"></i></a>
                     </td>
                 </tr>
                 <?php

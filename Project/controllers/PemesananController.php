@@ -20,4 +20,7 @@ class PemesananController {
     public function deletePemesanan($id){
         return $this->model->deletePemesanan($id);
     }  
+    public function updateStatus($id, $status_pembayaran){
+        return $this->model->updateStatus($id, $status_pembayaran);
+    }
 }

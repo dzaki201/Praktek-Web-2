@@ -17,6 +17,8 @@ RewriteRule ^editbus/?$ views/bus/edit.php
 RewriteRule ^hapusbus/?$ views/bus/hapus.php
 RewriteRule ^prosesbus/?$ views/bus/proses_tambah.php
 
+RewriteRule ^pembayaran/?$ views/pembayaran/index.php
+
 RewriteRule ^pencarian/?$ views/pencarian/index.php
 
 RewriteRule ^pemesanan/?$ views/pemesanan/index.php

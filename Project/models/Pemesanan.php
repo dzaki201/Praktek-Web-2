@@ -64,4 +64,15 @@ class pemesanan
             return false;
         }
     }
+
+    public function updateStatus($id, $status_pembayaran)    
+    {
+        $query = "UPDATE pemesanan SET status_bayar='$status_pembayaran' WHERE id='$id'";
+        $result = mysqli_query($this->koneksi, $query);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

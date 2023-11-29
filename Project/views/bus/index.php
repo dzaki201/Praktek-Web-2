@@ -59,9 +59,9 @@ $bus = $busController->getAllBus();
 
 
                     <td>
-                        <a href="editbus?id_bus=<?php echo $x['id_bus']; ?>" class="btn btn-warning">edit</a>
+                        <a href="editbus?id_bus=<?php echo $x['id_bus']; ?>" class="btn btn-warning"><i class="notika-icon notika-edit"></i></a>
                         <a href="hapusbus?id_bus=<?php echo $x['id_bus']; ?>" class="btn btn-danger"
-                            onclick="return confirm('Apakah Yakin akan menghapus?')">hapus</a>
+                            onclick="return confirm('Apakah Yakin akan menghapus?')"><i class="notika-icon notika-trash"></i></a>
                     </td>
                 </tr>
                 <?php
