@@ -3,12 +3,15 @@
 include_once '../../config.php';
 include_once '../../controllers/PemesananController.php';
 include_once '../../controllers/BusController.php';
+include_once '../../controllers/RuteController.php';
 
 $database = new database;
 $db = $database->getKoneksi();
 
 $busController = new BusController($db);
 $bus = $busController->getAllBus();
+$ruteController = new RuteController($db);
+$rute = $ruteController->getAllRute();
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -21,8 +24,10 @@ if (isset($_GET['id'])) {
             $nama = $_POST['nama'];
             $tanggal = $_POST['tanggal'];
             $id_bus = $_POST['id_bus'];
+            $harga = $_POST['harga'];
+            $nama_rute = $_POST['nama_rute'];
 
-            $result = $pemesananController->updatePemesanan($id, $nama, $tanggal, $id_bus);
+            $result = $pemesananController->updatePemesanan($id, $nama, $tanggal, $id_bus, $harga, $nama_rute);
             if ($result) {
                 header("location:pemesanan");
             } else {
@@ -63,6 +68,23 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label">Nama Rute</label>
+                    <div class="col-sm-10">
+                        <select name="nama_rute" class="form-select">
+                            <option selected>Pilih Rute</option>
+                            <?php foreach ($rute as $data): ?>
+                                <?php
+                                $selected = ($data['id_rute'] == $nama_rute) ? 'selected' : '';
+                                ?>
+                                <option value="<?php echo $data['nama_rute']; ?>" <?php echo $selected; ?>>
+                                    <?php echo $data['nama_rute']; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label">Pesan Bus</label>
                     <div class="col-sm-10">
                         <select name="id_bus" class="form-select" aria-label="Default select example">
@@ -80,6 +102,12 @@ if (isset($_GET['id'])) {
                         </select>
                     </div>
                 </div>
+                <!-- <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label">Harga</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="harga" value="<?php echo $pemesananData['harga'] ?>">
+                    </div>
+                </div> -->
 
                 <div class="mb-3 row">
                     <div class="col-sm-2"></div>

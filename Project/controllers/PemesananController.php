@@ -8,14 +8,14 @@ class PemesananController {
     public function getAllPemesanan(){
         return $this->model->getAllPemesanan();
     }
-    public function createPemesanan($nama, $tanggal, $id_bus){
-        return $this->model->createPemesanan($nama, $tanggal, $id_bus);  
+    public function createPemesanan($nama, $tanggal, $id_bus, $harga, $nama_rute){
+        return $this->model->createPemesanan($nama, $tanggal, $id_bus, $harga, $nama_rute);  
     }
     public function getPemesananById($id){
         return $this->model->getPemesananById($id);
     }
-    public function updatePemesanan($id, $nama, $tanggal, $id_bus){
-        return $this->model->updatePemesanan($id, $nama, $tanggal, $id_bus);
+    public function updatePemesanan($id, $nama, $tanggal, $id_bus, $harga, $nama_rute){
+        return $this->model->updatePemesanan($id, $nama, $tanggal, $id_bus, $harga, $nama_rute);
     } 
     public function deletePemesanan($id){
         return $this->model->deletePemesanan($id);

@@ -27,8 +27,9 @@ $pemesanan = $pemesananController->getAllPemesanan();
                         <th>ID Pemesanan</th>
                         <th>Nama Pemesan</th>
                         <th>Tanggal</th>
+                        <th>Nama Rute (id)</th>
                         <th>Pesanan Bus (id)</th>
-                        <!-- <th>Harga</th> -->
+                        <th>Harga</th>
 
                         <?php
                         $no = 1;
@@ -48,7 +49,13 @@ $pemesanan = $pemesananController->getAllPemesanan();
                                 <?php echo $x['tanggal'] ?>
                             </td>
                             <td>
+                                <?php echo $x['nama_rute'] ?>
+                            </td>
+                            <td>
                                 <?php echo $x['id_bus'] ?>
+                            </td>
+                            <td>
+                            <?php echo "Rp." . number_format($x['harga'], 0, ',', '.'); ?>
                             </td>
                             <td>
                                 <a href="editpemesanan?id=<?php echo $x['id']; ?>" class="btn btn-warning">edit</a>

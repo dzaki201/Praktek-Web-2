@@ -4,7 +4,7 @@
 //memanggil class model database
 include_once '../../config.php';
 include_once '../../controllers/BusController.php';
-require '../../index.php';
+require '../../index2.php';
 //instansiasi class database
 $database = new database;
 $db = $database->getKoneksi();

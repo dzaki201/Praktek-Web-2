@@ -3,6 +3,9 @@ RewriteBase /project/
 
 RewriteRule ^home/?$ index.php
 
+RewriteRule ^login/?$ login.php
+RewriteRule ^logout/?$ logout.php
+
 RewriteRule ^rute/?$ views/rute/index.php
 RewriteRule ^tambahrute/?$ views/rute/tambah.php
 RewriteRule ^editrute/?$ views/rute/edit.php

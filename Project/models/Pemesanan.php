@@ -15,7 +15,7 @@ class pemesanan
         $result = mysqli_query($this->koneksi, $query);
         return $result;
     }
-    public function createPemesanan($nama, $tanggal, $id_bus)
+    public function createPemesanan($nama, $tanggal, $id_bus, $harga, $nama_rute)
     {
         // Check if the selected bus is already reserved for the given date
         $checkQuery = "SELECT * FROM pemesanan WHERE id_bus = '$id_bus' AND tanggal = '$tanggal'";
@@ -26,8 +26,8 @@ class pemesanan
             return false;
         } else {
             // Bus is available, proceed with the reservation
-            $query = "INSERT INTO pemesanan (nama, tanggal, id_bus) 
-                  VALUES ('$nama', '$tanggal', '$id_bus')";
+            $query = "INSERT INTO pemesanan (nama, tanggal, id_bus, harga, nama_rute) 
+                  VALUES ('$nama', '$tanggal', '$id_bus', '$harga', '$nama_rute')";
             $result = mysqli_query($this->koneksi, $query);
 
             if ($result) {
@@ -44,9 +44,9 @@ class pemesanan
         return mysqli_fetch_assoc($result);
     }
 
-    public function updatePemesanan($id, $nama, $tanggal, $id_bus)
+    public function updatePemesanan($id, $nama, $tanggal, $id_bus, $harga, $nama_rute)
     {
-        $query = "UPDATE pemesanan SET nama='$nama', tanggal='$tanggal', id_bus='$id_bus' WHERE id='$id'";
+        $query = "UPDATE pemesanan SET nama='$nama', tanggal='$tanggal', id_bus='$id_bus' , harga='$harga', nama_rute='nama_rute' WHERE id='$id'";
         $result = mysqli_query($this->koneksi, $query);
         if ($result) {
             return true;

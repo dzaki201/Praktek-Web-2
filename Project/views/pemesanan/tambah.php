@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Form Components | Notika - Notika Admin Template</title>
+    <title>SIPEBUS | PEMESANAN</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -80,23 +80,39 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- Start Header Top Area -->
     <div class="header-top-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="logo-area">
-                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="header-top-menu">
-                        <ul class="nav navbar-nav notika-top-nav">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="logo-area">
+            <h2>SIPEBUS</h2>
 
-                        </ul>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+          <div class="header-top-menu">
+            <ul class="nav navbar-nav notika-top-nav">
+              <li class="nav-item dropdown">
+                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+                  class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menu"></i></span></a>
+                <div role="menu" class="dropdown-menu message-dd animated zoomIn">
+                  <div class="hd-message-info">
+                    <a href="#">
+                      <div class="hd-message-sn">
+                        <div class="hd-mg-ctn">
+                          <a href="logout.php">Log Out</a>
+
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
     <!-- End Header Top Area -->
     <!-- Mobile Menu start -->
     <div class="mobile-menu-area">
@@ -143,25 +159,36 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li class="active"><a href="home"><i class="notika-icon notika-house"></i> Home</a>
+                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li><a href="/Project/rute"><i class="notika-icon notika-mail"></i> rute</a>
+                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-app"></i> Tambah Data</a>
                         </li>
-                        <li><a href="bus"><i class="notika-icon notika-edit"></i> bus</a>
-                        </li>
-                        <li><a href="pemesanan"><i class="notika-icon notika-bar-chart"></i> pemesanan</a>
-                        </li>
-                        <li><a href="pencarian"><i class="notika-icon notika-windows"></i> pencarian</a>
-                        </li>
-
                     </ul>
-
-
+                    <div class="tab-content custom-menu-content">
+                        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="pencarian">Pencarian</a>
+                                </li>
+                                <li><a href="pemesanan">Pemesanan</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="rute">Data Rute</a>
+                                </li>
+                                <li><a href="bus">Data Bus</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+ 
     <?php
 
     include_once '../../config.php';
@@ -213,7 +240,7 @@
                             <div class="row">
                                 <label class="col-sm-2 col-form-label">Rute Bus</label>
                                 <div class="bootstrap-select fm-cmp-mg col-sm-10">
-                                    <select name="id_rute" class="selectpicker">
+                                    <select name="nama_rute" class="selectpicker">
                                         <option selected>Pilih Rute</option>
                                         <?php foreach ($rute as $data): ?>
                                             <option value="<?php echo $data['id_rute']; ?>" <?php echo ($id_rute == $data['id_rute']) ? 'selected' : ''; ?>>
