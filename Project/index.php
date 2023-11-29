@@ -78,14 +78,18 @@
             <ul class="nav navbar-nav notika-top-nav">
               <li class="nav-item dropdown">
                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
-                  class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menu"></i></span></a>
+                  class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span></a>
                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                   <div class="hd-message-info">
                     <a href="#">
+                    <div class="hd-message-sn">
+                        <div class="hd-mg-ctn">
+                          <a href="login.php">Log In</a>
+                        </div>
+                      </div>
                       <div class="hd-message-sn">
                         <div class="hd-mg-ctn">
                           <a href="logout.php">Log Out</a>
-
                         </div>
                       </div>
                     </a>

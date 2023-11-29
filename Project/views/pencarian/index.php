@@ -93,7 +93,7 @@
             <ul class="nav navbar-nav notika-top-nav">
               <li class="nav-item dropdown">
                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
-                  class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menu"></i></span></a>
+                  class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span></a>
                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                   <div class="hd-message-info">
                     <a href="#">
@@ -285,7 +285,8 @@ $tanggal = isset($_POST['tanggal']) ? $_POST['tanggal'] : '';
                                 <tr>
                                     <th>ID Bus</th>
                                     <th>Tipe Bus</th>
-                                    <th>Kapasitas</th>
+                                    <th>Kapasitas Bus</th>
+                                    <th>Aksi</th>
                                     <!-- Tambahkan kolom-kolom lain sesuai kebutuhan -->
                                 </tr>
                             </thead>
@@ -298,7 +299,7 @@ $tanggal = isset($_POST['tanggal']) ? $_POST['tanggal'] : '';
                                         <td>' . $data['tipe'] . '</td>
                                         <td>' . $data['kapasitas'] . '</td>
                                         <td>
-                                            <a href="tambahpemesanan?id_bus=' . $data['id_bus'] . '&id_rute=' . $nama_rute . '&tanggal=' . $tanggal . '" class="btn btn-success">pesan</a>
+                                            <a href="tambahpemesanan?id_bus=' . $data['id_bus'] . '&id_rute=' . $nama_rute . '&tanggal=' . $tanggal . '" class="btn btn-primary">pesan</a>
                                         </td>
                                         
                                     </tr>';
