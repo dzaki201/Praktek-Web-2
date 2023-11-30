@@ -51,7 +51,13 @@
                 </select>
             </div>
         </div>
-
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label" for="file">Tambah Foto Bus</label>
+            <div class="col-sm-10">
+            <input type="file" name="file" id="file" accept="image/*">
+            </div>
+        </div>
+       
 
         <div class="mb-3 row ">
             <div class="col-sm-2"></div>

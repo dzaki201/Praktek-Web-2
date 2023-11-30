@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>SIPEBUS | PENCARIAN</title>
+    <title>SIPEBUS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -97,10 +97,10 @@
                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                   <div class="hd-message-info">
                     <a href="#">
+                        
                       <div class="hd-message-sn">
                         <div class="hd-mg-ctn">
                           <a href="logout.php">Log Out</a>
-
                         </div>
                       </div>
                     </a>
@@ -234,7 +234,7 @@ $tanggal = isset($_POST['tanggal']) ? $_POST['tanggal'] : '';
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="col-sm-2 col-form-label">Nama Pemesan</label>
+                                <label class="col-sm-2 col-form-label">Tanggal</label>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                                     <div class="form-group ">
                                         <div class="nk-int-st">
@@ -299,7 +299,8 @@ $tanggal = isset($_POST['tanggal']) ? $_POST['tanggal'] : '';
                                         <td>' . $data['tipe'] . '</td>
                                         <td>' . $data['kapasitas'] . '</td>
                                         <td>
-                                            <a href="tambahpemesanan?id_bus=' . $data['id_bus'] . '&id_rute=' . $nama_rute . '&tanggal=' . $tanggal . '" class="btn btn-primary">pesan</a>
+
+                                            <a href="tambahpemesanan?id_bus=' . $data['id_bus'] . '&id_rute=' . $nama_rute . '&tanggal=' . $tanggal . '" class="btn btn-success"><i class="notika-icon notika-next"></i></a>
                                         </td>
                                         
                                     </tr>';
@@ -417,8 +418,5 @@ $tanggal = isset($_POST['tanggal']) ? $_POST['tanggal'] : '';
             <!-- main JS
         ============================================ -->
             <script src="js/main.js"></script>
-            <!-- tawk chat JS
-        ============================================ -->
-            <script src="js/tawk-chat.js"></script>
             </body>
 

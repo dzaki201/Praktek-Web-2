@@ -1,3 +1,43 @@
+<?php
+include_once '../../config.php';
+    include_once '../../controllers/PemesananController.php';
+    include_once '../../controllers/BusController.php';
+    include_once '../../controllers/RuteController.php';
+    
+    $database = new database;
+    $db = $database->getKoneksi();
+
+    $busController = new BusController($db);
+    $bus = $busController->getAllBus();
+    $ruteController = new RuteController($db);
+    $rute = $ruteController->getAllRute();
+
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+
+        $pemesananController = new PemesananController($db);
+        $pemesananData = $pemesananController->getPemesananById($id);
+
+        if ($pemesananData) {
+            if (isset($_POST['submit'])) {
+                $nama = $_POST['nama'];
+                $tanggal = $_POST['tanggal'];
+                $id_bus = $_POST['id_bus'];
+                $harga = $_POST['harga'];
+                $nama_rute = $_POST['nama_rute'];
+
+                $result = $pemesananController->updatePemesanan($id, $nama, $tanggal, $id_bus, $harga, $nama_rute);
+                if ($result) {
+                    header("location:pemesanan");
+                } else {
+                    header("location:editpemesanan");
+                }
+            }
+        } else {
+            echo "Pemesanan tidak ditemukan";
+        }
+    }
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -191,48 +231,6 @@
         </div>
     </div>
 
-    <?php
-
-    include_once '../../config.php';
-    include_once '../../controllers/PemesananController.php';
-    include_once '../../controllers/BusController.php';
-    include_once '../../controllers/RuteController.php';
-
-    $database = new database;
-    $db = $database->getKoneksi();
-
-    $busController = new BusController($db);
-    $bus = $busController->getAllBus();
-    $ruteController = new RuteController($db);
-    $rute = $ruteController->getAllRute();
-
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-
-        $pemesananController = new PemesananController($db);
-        $pemesananData = $pemesananController->getPemesananById($id);
-
-        if ($pemesananData) {
-            if (isset($_POST['submit'])) {
-                $nama = $_POST['nama'];
-                $tanggal = $_POST['tanggal'];
-                $id_bus = $_POST['id_bus'];
-                $harga = $_POST['harga'];
-                $nama_rute = $_POST['nama_rute'];
-
-                $result = $pemesananController->updatePemesanan($id, $nama, $tanggal, $id_bus, $harga, $nama_rute);
-                if ($result) {
-                    header("location:pemesanan");
-                } else {
-                    header("location:editpemesanan");
-                }
-            }
-        } else {
-            echo "Pemesanan tidak ditemukan";
-        }
-    }
-    ?>
-
     <div class="form-element-area">
         <div class="container">
             <div class="row">
@@ -297,7 +295,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <!-- <div class="row">
+                                <div class="row">
                                 <label class="col-sm-2 col-form-label">Harga</label>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                                     <div class="form-group ">
@@ -306,7 +304,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                                 <div class="row ">
                                     <div class="col-sm-2"></div>
                                     <button type="submit" name="submit" value="Simpan"

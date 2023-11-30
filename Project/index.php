@@ -84,12 +84,12 @@
                     <a href="#">
                     <div class="hd-message-sn">
                         <div class="hd-mg-ctn">
-                          <a href="login.php">Log In</a>
+                          <h4 href="login" >Log In</h4>
                         </div>
                       </div>
                       <div class="hd-message-sn">
                         <div class="hd-mg-ctn">
-                          <a href="logout.php">Log Out</a>
+                          <h4 href="logout">Log Out</h4>
                         </div>
                       </div>
                     </a>
@@ -248,9 +248,7 @@
   <!-- main JS
     ============================================ -->
   <script src="js/main.js"></script>
-  <!-- tawk chat JS
-    ============================================ -->
-  <script src="js/tawk-chat.js"></script>
+  
 </body>
 
 </html>
